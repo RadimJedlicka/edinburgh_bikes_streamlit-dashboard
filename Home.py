@@ -20,7 +20,7 @@ st.set_page_config(
     initial_sidebar_state="auto",
     )
 
-st.markdown('''<h1 style='text-align: center; color: black;'>
+st.markdown('''<h1 style='text-align: center;'>
                 Welcome to Edinburgh bikes APP<br>
                 created by  Radim Jedlička</h1>
                 ''', 
