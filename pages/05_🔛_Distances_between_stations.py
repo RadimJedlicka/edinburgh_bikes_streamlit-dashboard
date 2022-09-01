@@ -14,12 +14,12 @@ st.set_page_config(
 # ###################################### #####################################
 # DATA PROCESSING, DATAFRAMES, VARIABLES 
 # ###################################### ##################################### 
-query = 'SELECT * FROM edinburgh_bikes'
-engine = create_engine("mysql+pymysql://data-student:u9AB6hWGsNkNcRDm@data.engeto.com:3306/data_academy_04_2022")
-# save the table as dataframe
-df_bikes = pd.read_sql(sql=query, con=engine)
+# query = 'SELECT * FROM edinburgh_bikes'
+# engine = create_engine("mysql+pymysql://data-student:u9AB6hWGsNkNcRDm@data.engeto.com:3306/data_academy_04_2022")
+# # save the table as dataframe
+# df_bikes = pd.read_sql(sql=query, con=engine)
 
-# df_bikes = pd.read_csv('edinburgh_bikes.csv')
+df_bikes = pd.read_csv('edinburgh_bikes.csv')
 
 #Get the list of all stations and their coordinates
 df_stations = df_bikes[
@@ -100,7 +100,7 @@ df_start_end_stations['distance'] = haversine_vectorize(
 # STREAMLIT PAGE STRUCTURE 
 # ######################## ###################################################
 
-st.markdown('''<h1 style='text-align: center; color: black;'>
+st.markdown('''<h1 style='text-align: center;'>
                 Distances between stations</h1>
                 ''', unsafe_allow_html=True
             )

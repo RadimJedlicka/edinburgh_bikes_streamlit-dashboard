@@ -13,17 +13,12 @@ st.set_page_config(
 # ###################################### #####################################
 # DATA PROCESSING, DATAFRAMES, VARIABLES 
 # ###################################### ##################################### 
-query = 'SELECT * FROM edinburgh_bikes'
-engine = create_engine("mysql+pymysql://data-student:u9AB6hWGsNkNcRDm@data.engeto.com:3306/data_academy_04_2022")
-# save the table as dataframe
-df_bikes = pd.read_sql(sql=query, con=engine)
+# query = 'SELECT * FROM edinburgh_bikes'
+# engine = create_engine("mysql+pymysql://data-student:u9AB6hWGsNkNcRDm@data.engeto.com:3306/data_academy_04_2022")
+# # save the table as dataframe
+# df_bikes = pd.read_sql(sql=query, con=engine)
 
-# df_bikes = pd.read_csv('edinburgh_bikes.csv')
-
-st.markdown('''<h1 style='text-align: center; color: black;'>
-                Weekdays or weekends</h1>
-                ''', unsafe_allow_html=True
-                )
+df_bikes = pd.read_csv('edinburgh_bikes.csv')
 
 df_bikes['started_at_dt'] = pd.to_datetime(df_bikes['started_at'])
 
@@ -49,6 +44,14 @@ df_weekday=df_weekday.replace(
      }
 )
 
+# ######################## ###################################################
+# STREAMLIT PAGE STRUCTURE 
+# ######################## ###################################################
+st.markdown('''<h1 style='text-align: center;'>
+                Weekdays or weekends</h1>
+                ''', unsafe_allow_html=True
+                )
+                
 st.write('''
     Bellow you can see a histogram 
     that compares the number of rents during the days of the week, 
