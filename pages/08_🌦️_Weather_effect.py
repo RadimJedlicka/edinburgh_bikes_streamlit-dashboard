@@ -24,9 +24,9 @@ df_bikes = pd.read_csv('edinburgh_bikes.csv')
 query2 = 'SELECT * FROM edinburgh_weather'
 engine2 = create_engine("mysql+pymysql://data-student:u9AB6hWGsNkNcRDm@data.engeto.com:3306/data_academy_04_2022")
 # save the table as dataframe
-df_weather = pd.read_sql(sql=query2, con=engine2)
+# df_weather = pd.read_sql(sql=query2, con=engine2)
 
-# df_weather = pd.read_csv('edinburgh_weather.csv')
+df_weather = pd.read_csv('edinburgh_weather.csv')
 
 
 # create new column in datetime format for joining with df_weather
